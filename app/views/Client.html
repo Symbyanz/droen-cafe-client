@@ -1,0 +1,178 @@
+  
+<!-- loggin -->
+<div class="container" ng-if="vm.status === 'login'">
+
+  <div class="row s12 cl-login">
+    <form class="col s12 m6 offset-m3 z-depth-1 white" name="vm.accountForm" novalidate>
+
+      <div class="row cl-login-form">
+        <h5 class="cl-login-title grey-text text-darken-2">Drone Cafe</h5>
+
+        <div class="input-field col s12">
+          <input id="icon_prefix" type="text" class="validate" data-ng-model="vm.user.name">
+          <label for="icon_prefix">Name</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" data-ng-model="vm.user.email" required>
+          <label for="email" data-error="wrong">Email</label>
+        </div>
+        <div>
+          <button class="btn waves-effect waves-light left cl-login-button orange lighten-1" type="button" name="action" ng-click="vm.login(vm.user)" ng-disabled="vm.accountForm.$invalid">log in</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- landing -->
+<div ng-if="vm.status === 'landing'">
+  <div class="cl-preloader center">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- open -->
+<div ng-if="vm.status === 'open'">
+  <div class="cl-main">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper orange lighten-1">
+          <a class="brand-logo left valign-wrapper cl-logo"><h5>Drone cafe</h5></a>
+        </div>
+      </nav>  
+    </div>
+    <div class="row">
+      <div class="col s12 l10 offset-l1">
+        <div class="row cl-all-list">
+
+          <div class="col s12 l8">
+            <div class="cl-order-list z-depth-1 white">
+              <h5 class="grey-text text-darken-2">My orders</h5>
+
+              <div class="cl-dishes-item" ng-repeat="singleOrder in vm.user.orders">
+                <div class="left cl-dishes-name"><a class="grey-text truncate text-darken-2"><li>{{singleOrder.title}}</li></a></div>
+                <div class="right"><h6 class="right cl-dishes-status" ng-class="vm.whatIsColor(singleOrder.status)">{{singleOrder.status}}</h6></div>
+              </div>
+
+              <a class="waves-effect waves-light btn cl-order-button orange lighten-1" ng-click="vm.popUpMenu(true)">Order more</a>
+            </div>
+          </div>
+
+          <div class="col s6 l4">
+            <div class="cl-personal-area z-depth-1 white">
+              <h5 class="grey-text truncate text-darken-2">{{vm.user.name}}</h5>
+              <h6 class="grey-text truncate text-darken-2">{{vm.user.email}}</h6>
+              <h1 class="grey-text cl-balance text-darken-1">{{vm.user.balance}}
+                  <img src="../images/database2.png"></img>
+                  <a class="cl-add-button valign-wrapper" ng-click="vm.addMoney()"></a>
+              </h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MENU -->
+  <div class="cl-all-menu">
+    <div class="cl-shadow-menu" ng-click="vm.popUpMenu(false)"></div>
+
+    <div class="cl-box-menu">
+      <div class="cl-navbar-fixed">
+        <nav>
+          <div class="nav-wrapper white">
+            <a href="#" class="brand-logo center valign-wrapper cl-logo-menu grey-text text-darken-2"><h5>Menu</h5></a>
+            <a class="right valign-wrapper grey-text cl-icon-menu" ng-click="vm.popUpMenu(false)"><i class="material-icons grey-text text-lighten-1">close</i></a>
+          </div>
+        </nav> 
+      </div> 
+
+      <div class="cl-subbox-menu">
+        <div class="cl-inner-subbox-menu">
+          <div class="cl-content-menu">
+            <div class="cl-box-grid">
+
+              <div class="cl-grid" ng-repeat="singleDish in vm.menu" ng-click="vm.popUpGrid(singleDish.id)">
+                <div class="cl-image-grid"><img ng-src="{{singleDish.image}}" alt="Dish.."></div>
+                <div class="cl-content-grid  blue-grey darken-1">
+                  <h5 class="white-text truncate ">{{singleDish.title}}</h5>
+                  <h6 class="white-text">{{singleDish.price}} <img src="../images/database.png" alt="money"></h6>
+                </div>
+                <div class="cl-shadow-grid"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Grid -->
+  <div class="cl-full-grid">
+    <div class="cl-shadow-full-grid" ng-click="vm.popUpGrid(false)"></div>
+    <div class="cl-box-full-grid">
+      <div class="cl-image-full-grid">
+        <img ng-src="{{vm.dish.image}}">
+        <div class="cl-shadow-image-grid"></div>
+      </div>
+      <div class="cl-content-full-grid blue-grey darken-2 white-text">
+        <div class="cl-full-grid-title">
+          <h4>{{vm.dish.title}}</h4>
+          <i class="material-icons blue-grey-text text-lighten-1 cl-full-grid-icon" ng-click="vm.popUpGrid(false)">close</i>
+        </div>
+        <div class="cl-full-grid-ingredients blue-grey-text text-lighten-3">
+          <!-- <h5>Ingredients:</h5> -->
+          <h6>{{vm.dish.ingredients}}</h6>
+        </div>
+
+        <div class="cl-full-grid-btn">
+          <h2>{{vm.dish.price}}<img src="../images/database.png"></img></h2>
+          <a class="waves-effect waves-light btn left" ng-class="vm.purchasingPower" ng-click="vm.buyDish()">buy</a>
+          <h6 class="left red-text darken-3 cl-full-grid-notEnough">Not enough: {{vm.dish.price - vm.user.balance}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

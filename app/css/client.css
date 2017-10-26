@@ -1,0 +1,374 @@
+/* status color*/
+.orange-status{
+	color: #ffab00;
+}
+.red-status{
+	color: #f44336;
+}
+.green-status{
+	color: #4caf50;
+}
+
+
+
+
+
+
+html, body{
+	background: #f5f5f5;
+}
+
+/* cl- html, к которому применяются стили, mybutton - название класса.*/
+.cl-login{
+	margin-top: 150px;
+}
+.cl-login-form{
+	padding: 10px 20px 10px 20px;
+}
+.cl-login-title{
+	margin-top: 35px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+.cl-login-button{
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+/* preloader*/
+.cl-preloader{
+	margin-top: 20%;
+}
+
+
+/* open sourse*/
+.cl-logo{
+	margin-left: 20px;
+	height: 100%;
+}
+.cl-logo > h5{
+	margin-top: 20px;
+}
+
+.cl-all-list{
+	margin-top: 20px;
+}
+.cl-order-list, .cl-personal-area{
+	margin-top: 20px;
+	padding: 10px 35px 30px 35px;
+}
+.cl-order-list >h5 {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.cl-order-button{
+	margin-top: 10px;
+}
+
+.cl-dishes-name{
+	width: 70%;
+	margin-right: 5%;
+}
+.cl-dishes-status{
+	font-size: 13px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+
+.cl-balance{
+	height: 64px;
+}
+.cl-balance > img {
+	margin-left: 2px;
+	width: 32px;
+}
+.cl-add-button{
+	height: 40px;
+	width: 40px;
+	margin-top: 16px;
+	margin-bottom: 8px;
+	background-image: url(../images/plus.ico);
+	background-position: center;
+	margin-right: 15px;
+	float: right;
+}
+.cl-add-button:hover{
+	cursor: pointer;
+}
+.cl-personal-area > h5{
+	margin-bottom: 10px;
+}
+.cl-personal-area > h1{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: 300;
+}
+
+.cl-dishes-item{
+	width: 100%;
+	height: 20px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.cl-menu{
+	margin-right: 20px;
+}
+.collection{
+	border:none;
+}
+
+.cl-main{
+	display: block;
+	position: relative;
+	z-index: 1;
+}
+
+
+/* menu */
+.animation{
+	transition: all 0.3s ease-in-out;
+}
+
+.cl-all-menu{
+	position: fixed;
+	display: none; /* block */
+	z-index: 2;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	/*opacity: 1;*/
+	/*visibility: hidden;*/
+}
+.cl-shadow-menu{
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.8;
+}
+
+
+
+.cl-logo-menu{
+	margin-top: 8px;
+}
+.cl-logo-menu > h5 {
+	font-size: 25px;
+}
+.cl-icon-menu{
+	height: 64px;
+	width: 64px;
+	padding-left: 10px;
+}
+.cl-icon-menu:hover{
+	cursor: pointer;
+}
+
+
+.cl-box-menu{
+	z-index: 4;
+	position: fixed;
+	top: 0;
+	top: 10%;
+	left: 50%;
+	height: 560px;/*80%*/
+	width: 884px;
+	transform: translateX(-50%);
+	overflow-y: hidden;
+	border-radius: 3px;
+	background: #fff;
+}
+
+.cl-navbar-fixed{
+	position: fixed;
+	width: 100%;
+}
+
+.cl-subbox-menu{
+	position: relative;
+	margin-top: 65px;
+	height: 100%;
+	width: 100%;
+	background: #fff;	
+}
+.cl-inner-subbox-menu{
+	position: absolute;
+	width: 100%;
+	height: 89%;
+	bottom: 11%;
+	padding-bottom: 20px;
+	overflow-y: auto;
+}
+.cl-content-menu{
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 14px;
+}
+
+/*menu items*/
+.cl-box-grid{
+	width: 820px;
+}
+.cl-grid{
+	float: left;
+	width: 205px;
+	height: 290px;
+	padding: 2.5px;
+}
+.cl-grid:hover{
+	cursor: pointer;
+}
+.cl-shadow-grid{
+	width: 100%;
+	height: 200px;
+	margin-top: -285px;
+	background: #000;
+	opacity: 0.1;
+}
+.cl-image-grid{
+	height: 200px;
+}
+.cl-image-grid > img{
+	width: 200px;
+	height: 200px;
+}
+
+
+.cl-content-grid{
+	width: 200px;
+	height: 85px;
+}
+.cl-content-grid > h6 > img {
+	width: 12px;
+}
+.cl-content-grid > h5{
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 18px;
+	margin: 0;
+}
+.cl-content-grid > h6{
+	padding-top: 9px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* popUpGrid */
+.cl-full-grid{
+	position: fixed;
+	display: none;
+	z-index: 9;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.cl-full-grid-icon{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 44px;
+	height: 44px;
+	padding: 10px;
+}
+.cl-full-grid-icon:hover{
+	cursor: pointer;
+}
+.cl-full-grid-notEnough{
+	display: none;
+}
+
+
+.cl-shadow-full-grid{
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.6;
+}
+.cl-box-full-grid{
+	z-index: 11;
+	position: fixed;
+	top: 9%;
+	left: 50%;
+	height: 580px;
+	width: 900px;
+	transform: translateX(-50%);
+	background: #fff;
+}
+.cl-image-full-grid {
+	position: absolute;
+	height: 580px;
+	width: 580px;
+	/*overflow: hidden;*/
+}
+.cl-image-full-grid > img{
+	height: 100%;
+	width: auto;
+	max-width: 100%;
+	float: left;
+}
+.cl-shadow-image-grid{
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: 580px;
+	background: #000;
+	opacity: 0.1;
+}
+.cl-content-full-grid{
+	height: 100%;
+	width: 320px;
+	float: right;
+	background: #f5f5f5;
+}
+
+
+.cl-full-grid-title > h4 {
+	padding-top: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+
+.cl-full-grid-ingredients{
+	width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.cl-full-grid-ingredients > h5{
+	font-size: 21px;
+}
+
+
+.cl-full-grid-btn > h5{
+	padding-left: 10px;
+}
+.cl-full-grid-btn > h2 {
+	margin-bottom: 10px;
+}
+.cl-full-grid-btn > h2 > img{
+	width: 27px;
+}
+.cl-full-grid-btn{
+	position: absolute;
+	width: 320px;
+	bottom: 0;
+	padding-bottom: 30px;
+	padding-left: 30px;
+}
+.cl-full-grid-btn > h6 {
+	font-size: 17px;
+	font-style: italic;
+	padding-left: 15px;
+}
+.cl-full-grid-btn > a {
+	margin-left: 2px;
+}

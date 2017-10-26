@@ -1,0 +1,35 @@
+.ki-main{
+	position: absolute;
+	display: block; /* block */
+	z-index: 2;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	/*opacity: 1;*/
+	/*visibility: hidden;*/
+}
+.ki-dishes-name{
+	width: 70%;
+	margin-right: 5%;
+}
+.ki-dishes-item{
+	width: 100%;
+	height: 36px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.ki-dishes-name > a{
+	padding-top: 6px;
+	padding-bottom: 6px;
+ 	font-size: 16px;
+}
+.ki-btn{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 16px;
+	padding-right: 16px;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
