@@ -1,19 +1,4 @@
-<!-- <div class="row">
-	<div class="panel panel-default col s12 center" style="margin-top: 100px;">
-		<div class="panel-body">
-
-			<div class="btn-group " role="group">
-				<a class="btn btn-default" href="#!/">ago in user interface</a>
-			</div>
-
-		</div>
-	</div>
-	<blockquote class="col s3 left">
-		It's interface for cookes.
-	</blockquote>
-</div> -->
-
-<div class="ki-main">
+<div class="ki-main" ng-init="vm.login()">
 	<div class="navbar-fixed">
 		<nav>
 			<div class="nav-wrapper orange lighten-1">
@@ -30,14 +15,11 @@
 					<div class="cl-order-list z-depth-1 white">
 						<h5 class="grey-text text-darken-2">Oredered</h5>
 
-						<div class="ki-dishes-item">
-							<div class="left ki-dishes-name"><a class="grey-text truncate text-darken-2"><li>Cranberry Zingers</li></a></div>
-							<div class="right ki-dishes-btn"><a class="waves-effect ki-btn orange-text text-accent-4">start</a></div>
-						</div>
-
-						<div class="ki-dishes-item">
-							<div class="left ki-dishes-name"><a class="grey-text truncate text-darken-2"><li>Cranberry Zingers</li></a></div>
-							<div class="right ki-dishes-btn"><a class="waves-effect ki-btn orange-text text-accent-4">start</a></div>
+						<div class="ki-dishes-item" ng-repeat="singleOrder in vm.orders | filter: status = 'Ordered'">
+							<div class="left ki-dishes-name"><a class="grey-text truncate text-darken-2"><li>{{singleOrder.title}}</li></a></div>
+							<div class="right ki-dishes-btn">
+								<a class="waves-effect ki-btn orange-text text-accent-4" ng-click="vm.cooking(singleOrder._id);">start</a>
+							</div>
 						</div>
 
 					</div>
@@ -47,21 +29,12 @@
 					<div class="cl-order-list z-depth-1 white">
 						<h5 class="grey-text text-darken-2">Cooking</h5>
 						
-						<div class="ki-dishes-item">
-							<div class="left ki-dishes-name"><a class="grey-text truncate text-darken-2"><li>Cranberry Zingers</li></a></div>
-							<div class="right ki-dishes-btn"><a class="waves-effect ki-btn green-text">ready</a></div>
+						<div class="ki-dishes-item" ng-repeat="singleOrder in vm.orders | filter: status = 'Cooking'">
+							<div class="left ki-dishes-name"><a class="grey-text truncate text-darken-2"><li>{{singleOrder.title}}</li></a></div>
+							<div class="right ki-dishes-btn">
+								<a class="waves-effect ki-btn green-text" ng-click="vm.ready(singleOrder._id)">ready</a>
+							</div>
 						</div>
-
-						<div class="ki-dishes-item">
-							<div class="left ki-dishes-name"><a class="grey-text truncate text-darken-2"><li>Cranberry Zingers</li></a></div>
-							<div class="right ki-dishes-btn"><a class="waves-effect ki-btn green-text">ready</a></div>
-						</div>
-						
-						<div class="ki-dishes-item">
-							<div class="left ki-dishes-name"><a class="grey-text truncate text-darken-3"><li>Cranberry Zingers</li></a></div>
-							<div class="right ki-dishes-btn"><a class="waves-effect ki-btn green-text">ready</a></div>
-						</div>
-
 
 					</div>
 				</div>

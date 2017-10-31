@@ -14,7 +14,7 @@ vm.login = function(user_data){
 
 	vm.accountForm.$setPristine();
 	ClientService.postClient(user_data).then( res => {
-				vm.user = res.data;
+		vm.user = res.data;
 
 				vm.status = 'open'; // = res.status;
 			});
@@ -29,7 +29,9 @@ vm.addMoney = function() {
 
 vm.buyDish = function() {
 	vm.user.balance -= vm.dish.price;
-	vm.user.orders.push( {id: vm.dish.id, title: vm.dish.title, status: "Ordered"} );
+	var order_id = vm.randWDclassic();
+
+	vm.user.orders.push( { _id: order_id, dish_id: vm.dish.id, title: vm.dish.title, status: "Ordered"} );
 
 	ClientService.updateBalance(vm.user);
 	ClientService.newOrder(vm.user);
@@ -72,14 +74,28 @@ vm.popUpGrid = function(id_grid){
 		});
 	}
 };
+// ---------------------------------------------------- 
 
+vm.randWDclassic = function() {  // [ 3 ] рандомные слова и символы в 12 знаков..
+	var s ='', abd ='abcdefghijklmnopqrstuvwxyz0123456789', aL = abd.length;
+	while(s.length < 12)
+		s += abd[Math.random() * aL|0];
+	return s;
+};
 
-// --------------------------------------------------
 vm.whatIsColor = function(status) {
 	if((status === "Ordered") || (status === "Cooking") || (status === "On the way")) return "orange-status";
 	else if(status === "Problems") return "red-status";
 	else if(status === "Arrived") return "green-status";
 	else return "";
 };
+// --------------------------------------------------
+
+socket.on('updateStatus', function(order_data) {
+	vm.user.orders.forEach(function(item, i) {
+		if(item._id === order_data._id) {	
+			item.status = order_data.status; }
+		});
 });
 
+});
