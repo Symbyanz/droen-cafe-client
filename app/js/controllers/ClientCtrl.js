@@ -103,7 +103,7 @@ socket.on('deleteUserOrder', function(email, _id, cash_back) {
 		vm.user.orders.forEach(function(item, i) {
 			if(item._id === _id) {
 				vm.user.orders.splice(i, 1);
-				vm.user.balance += item.cash_back;
+				vm.user.balance += cash_back;
 			}
 			});
 	}
