@@ -88,7 +88,7 @@
               <h5 class="grey-text text-darken-2">My orders</h5>
 
               <div class="cl-dishes-item" ng-repeat="singleOrder in vm.user.orders">
-                <div class="left cl-dishes-name"><a class="grey-text truncate text-darken-2"><li>{{singleOrder.title}}</li></a></div>
+                <div class="left cl-dishes-name"><a class="grey-text text-darken-2"><li class="truncate">{{singleOrder.title}}</li></a></div>
                 <div class="right"><h6 class="right cl-dishes-status" ng-class="vm.whatIsColor(singleOrder.status)">{{singleOrder.status}}</h6></div>
               </div>
 
