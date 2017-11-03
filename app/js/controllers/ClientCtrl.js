@@ -91,11 +91,23 @@ vm.whatIsColor = function(status) {
 };
 // --------------------------------------------------
 
-socket.on('updateStatus', function(order_data) {
+socket.on('updateUserStatus', function(order_data) {
 	vm.user.orders.forEach(function(item, i) {
 		if(item._id === order_data._id) {	
 			item.status = order_data.status; }
 		});
 });
+
+socket.on('deleteUserOrder', function(email, _id, cash_back) {
+	if(vm.user.email === email){
+		vm.user.orders.forEach(function(item, i) {
+			if(item._id === _id) {
+				vm.user.orders.splice(i, 1);
+				vm.user.balance += item.cash_back;
+			}
+			});
+	}
+})
+
 
 });

@@ -7,7 +7,7 @@ angular
         postClient(user_data) {
             return $http({
                 method: 'POST',
-                        url: 'https://infinite-lowlands-52249.herokuapp.com/users', // url server.. http://192.168.0.121:3000/users 
+                        url: 'https://infinite-lowlands-52249.herokuapp.com/users', // url server..  http://192.168.0.121:3000/users
                         data: user_data
                     })
         },

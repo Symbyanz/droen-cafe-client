@@ -8,11 +8,11 @@ angular
         },
 
         cookingOrder(order){ 
-        	return socket.emit("cookingOrder", {client_email: order.client_email, _id: order._id, status: order.status});
+        	return socket.emit("cookingKitchenOrder", {client_email: order.client_email, _id: order._id, status: order.status});
         },
 
         readyOrder(order){ 
-        	return socket.emit("readyOrder", {client_email: order.client_email, _id: order._id, status: "On the way"}); 
+        	return socket.emit("readyKitchenOrder", {client_email: order.client_email, _id: order._id, dish_id: order.dish_id, status: "On the way"}); 
         }
     }
 

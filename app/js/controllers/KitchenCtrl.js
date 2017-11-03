@@ -30,7 +30,7 @@ angular
 			});
 	}
 
-	socket.on("addOrder", function(order) {
+	socket.on("addKitchenOrder", function(order) {
 		vm.orders.push(order);
 	})
 
