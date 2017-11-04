@@ -54,7 +54,6 @@ vm.popUpMenu = function(status) {
 // --------------------------------------------------
 
 vm.popUpGrid = function(id_grid){
-
 	if(!id_grid){
 		$(".cl-full-grid").css("display", "none");
 	} else {
@@ -107,7 +106,7 @@ socket.on('deleteUserOrder', function(email, _id, cash_back) {
 			}
 			});
 	}
-})
+});
 
 
 });
