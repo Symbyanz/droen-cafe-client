@@ -5,9 +5,9 @@ angular
 .controller('KitchenCtrl', function(KitchenService, socket) {
 
 	const vm = this;
-	var vm.orders = {};
 	// вызывается при инициализации входа в ../kitchen 
 	vm.login = function(){
+		vm.orders = {};
 		KitchenService.getOrders().then( res => {	vm.orders = res.data; });
 	}
 
