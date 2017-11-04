@@ -2,8 +2,8 @@ var myApp = angular.module('app', ['ngRoute', 'btford.socket-io', 'ngMessages'])
 
 angular
 .module('app')
-.config(['$routeProvider', '$locationProvider',
-  function config($routeProvider, $locationProvider) {
+.config(['$routeProvider', //'$locationProvider',
+  function config($routeProvider) {//, $locationProvider
 
     $routeProvider.
     when('/', {
@@ -17,9 +17,9 @@ angular
     otherwise({
       redirectTo: '/'
     });
-    if(window.history && window.history.pushState){
-      $locationProvider.html5Mode(true);
-    }
+    // if(window.history && window.history.pushState){
+    //   $locationProvider.html5Mode(true);
+    // }
   }
   ])
 
