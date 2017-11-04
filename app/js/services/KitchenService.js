@@ -4,7 +4,7 @@ angular
 
     return {
         getOrders() {
-            return $http.get('http://192.168.0.121:3000/orders'); // url server.. https://infinite-lowlands-52249.herokuapp.com/orders
+            return $http.get('https://infinite-lowlands-52249.herokuapp.com/orders'); // url server.. http://192.168.0.121:3000/orders
         },
 
         cookingOrder(order){ 
